@@ -1,60 +1,153 @@
-//ser04 timer
-  // 초기 시간 설정: 6일 10시간 42분 12초 52(1/100초)
-  let remainingTime = (6 * 24 * 60 * 60 * 1000) + 
-  (10 * 60 * 60 * 1000) + 
-  (42 * 60 * 1000) + 
-  (12 * 1000) + 
-  52;
+let time = {
+  d: 6,
+  h: 10,
+  m: 42,
+  s: 12
+};
 
-function updateCountdown() {
-// 시간 계산
-const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-const milliseconds = Math.floor(remainingTime % 1000 / 10); // 1/100초 단위로 표시
-
-// 화면 업데이트
-document.getElementById('days').textContent = days.toString().padStart(2, '0');
-document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-document.getElementById('milliseconds').textContent = milliseconds.toString().padStart(2, '0');
-
-// 시간 감소
-remainingTime -= 10; // 1/100초 단위로 감소 (10ms)
-
-// 시간이 종료되면 clearInterval
-if (remainingTime <= 0) {
-clearInterval(countdownInterval);
-document.getElementById('milliseconds').textContent = '00';
-alert('시간이 종료되었습니다!');
-}
-}
-
-// 10ms마다 업데이트 (1/100초 단위)
-const countdownInterval = setInterval(updateCountdown, 10);
-
-// 초기 화면 업데이트
-updateCountdown();
-
-//sec04 swiper 
-
+// 1초마다 실행되는 타이머
+const timer = setInterval(() => {
+  // 초 감소
+  time.s--;
+  
+  // 시간 단위 조정
+  if (time.s < 0) {
+    time.s = 59;
+    time.m--;
+    
+    if (time.m < 0) {
+      time.m = 59;
+      time.h--;
+      
+      if (time.h < 0) {
+        time.h = 23;
+        time.d--;
+        
+        // 시간 종료 체크
+        if (time.d < 0) {
+          clearInterval(timer);
+          document.querySelector('.countdown-line').innerHTML = '시간 종료!';
+          return;
+        }
+      }
+    }
+  }
+  
+  // 화면 업데이트
+  document.getElementById('days').textContent = time.d.toString().padStart(2, '0');
+  document.getElementById('hours').textContent = time.h.toString().padStart(2, '0');
+  document.getElementById('minutes').textContent = time.m.toString().padStart(2, '0');
+  document.getElementById('seconds').textContent = time.s.toString().padStart(2, '0');
+}, 1000);
+// sec04 swiper
 var swiper = new Swiper(".mySwiper", {
-  slidesPerView:3,
   spaceBetween: 30,
   centeredSlides: true,
+  slidesPerView: 3,
+  loop:true,
+  loopAdditionalSlides: 3,
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
   },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  
+breakpoints: {
+  1280: {
+    slidesPerView: 3,
+    spaceBetween: 20
+  },
+  1024: {
+    slidesPerView: 2,
+    spaceBetween: 28
+  },
+  720: {
+    slidesPerView: 2,
+    spaceBetween: 15
+  },
+  0: {
+    slidesPerView: 1,
+    spaceBetween: 10
+  }
+}
+});
+
+// sec05 swiper 
+var reviewSwiper = new Swiper(".reviewSwiper", {
+autoplay: {
+  delay: 0,
+  disableOnInteraction: false,
+},
+spaceBetween: 20,
+loop: true,
+speed: 4000,
+loopAdditionalSlides: 3, // 추가 슬라이드 복제 → 마지막 슬라이드에서 멈칫하는 현상 방지
+observer: true,
+observeParents: true,
+mousewheel: false,
+simulateTouch: false,
+pauseOnMouseEnter: false,
+allowTouchMove: false,
+grabCursor: false,
+
+breakpoints: {
+  1280: {
+    slidesPerView: 3.5,
+    spaceBetween: 20
+  },
+  1024: {
+    slidesPerView: 2.5,
+    spaceBetween: 20
+  },
+  720: {
+    slidesPerView: 2,
+    spaceBetween: 15
+  },
+  0: {
+    slidesPerView: 1,
+    spaceBetween: 10
+  }
+}
+});
+
+
+var reviewSwiperReverse = new Swiper(".reviewSwiperReverse", {
+autoplay: {
+  delay: 0,
+  disableOnInteraction: false,
+  reverseDirection: true, // 반대 방향으로 슬라이드
+},
+spaceBetween: 20,
+loop: true,
+speed: 4000,
+loopAdditionalSlides: 3, // 추가 슬라이드 복제 → 마지막 슬라이드에서 멈칫하는 현상 방지
+observer: true,
+observeParents: true,
+mousewheel: false,
+simulateTouch: false,
+pauseOnMouseEnter: false,
+allowTouchMove: false,
+grabCursor: false,
+breakpoints: {
+  1280: {
+    slidesPerView: 3.5,
+    spaceBetween: 20
+  },
+  1080: {
+    slidesPerView: 2.5,
+    spaceBetween: 20
+  },
+  720: {
+    slidesPerView: 2,
+    spaceBetween: 15
+  },
+  0: {
+    slidesPerView: 1,
+    spaceBetween: 10
+  }
+}
 });
 
