@@ -90,6 +90,10 @@ img {
     margin-bottom: 100px;
 }
 
+.none {
+    display: block !important;
+}
+
 .speed {
     transition-timing-function: linear !important;
 }
@@ -118,6 +122,10 @@ img {
 
     section.kv .w-50 {
         width: 100%;
+    }
+    
+    .none {
+        display: none !important;
     }
 }
 

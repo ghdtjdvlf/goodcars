@@ -1375,7 +1375,7 @@ display: block;
 }
 
 .section03 .q3 .titlebox p {
-  font-size: 21px;
+  font-size: 20px;
 }
 .section03 .q3 .text-wrap p {
   font-size: 120px;
@@ -1428,6 +1428,14 @@ margin-bottom: 25px;
   width: 332px !important;
 }
 
+.section05 .title h2 {
+  font-size: 30px
+}
+.section05 .title p {
+  font-size: 16px;
+  color: var(--grey-first);
+}
+
 
 
 
@@ -1440,5 +1448,3 @@ margin-bottom: 25px;
 
 
 
-
-/*# sourceMappingURL=style.css.map */
