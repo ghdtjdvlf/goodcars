@@ -1,3 +1,14 @@
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+    const smoother = ScrollSmoother.create({
+        wrapper: "#smooth-wrapper",
+        content: "#smooth-content",
+        smooth: 2.5,
+
+    });
+
+
+
 let time = {
   d: 6,
   h: 10,
@@ -46,6 +57,7 @@ var swiper = new Swiper(".mySwiper", {
   slidesPerView: 3,
   loop:true,
   loopAdditionalSlides: 3,
+  touchRatio: 0,
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
