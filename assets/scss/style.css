@@ -1303,7 +1303,7 @@ footer .footer-container .footer-legal a:hover {
     text-align: center;
   }
 }
-@media (max-width:480px) {
+@media (max-width:440px) {
   section.kv {
     background: #0F1D45;
     padding: 52px 0;
