@@ -7,6 +7,27 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
     });
 
+  const gnb = document.querySelector('ul.gnb');
+
+  function checkWidth() {
+    if(window.innerWidth <= 1024) {
+      gnb.classList.add('off');
+    } else {
+      gnb.classList.remove('off');
+    }
+  }
+
+   window.addEventListener('resize', checkWidth);
+  checkWidth();
+
+  const gnbToggle = document.querySelector('.menu-toggle')
+
+$(gnbToggle).ready(function() {
+  $('.menu-toggle').on('click', function() {
+    $(this).toggleClass('active');
+  });
+});
+
 
 
 let time = {
@@ -57,7 +78,7 @@ var swiper = new Swiper(".mySwiper", {
   slidesPerView: 3,
   loop:true,
   loopAdditionalSlides: 3,
-  touchRatio: 0,
+
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,

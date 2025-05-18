@@ -19,8 +19,30 @@ header .w-1244 {
   justify-content: space-between;
 }
 
-header a.logo {
+header .menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
 
+header .menu-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+header a.logo {
+  font-family: 'RixYeoljeongdo_Regular';
+  color: var(--blue-color);
+  font-size: 25px;
 }
 
 header ul{
@@ -451,7 +473,7 @@ section.kv .kv_img img {
 }
 
 .section03 .q4 .content-box .box{
- border: solid 1px var(--grey-second);
+
  padding: 30px 0;
 
 }
@@ -784,6 +806,14 @@ footer .footer-container .footer-legal a:hover {
 
 @media (max-width: 1280px) {
 
+  header {
+    padding: 0 80px;
+  }
+
+  header .w-1244 {
+    padding: 0 40px;
+  }
+
 
   section.kv .kv_text h3 {
     font-size: 70px;
@@ -1024,10 +1054,55 @@ footer .footer-container .footer-legal a:hover {
   }
 }
 @media (max-width: 1024px) {
-  section.kv {
-    padding: 57px 0;
-    height: 543px;
+  header .menu-toggle {
+    display: flex;
   }
+
+  /* gnb는 숨기고 세로 메뉴로 변경 */
+  .gnb {
+    position: absolute;
+    top: 60px; 
+    right: 0;
+    background: #fff;
+    width: 200px;
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
+    max-height: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 0 0 5px 5px;
+    transition: max-height 0.4s ease;
+  }
+
+  .gnb li {
+    border-bottom: 1px solid #eee;
+  }
+
+  .gnb li a {
+    display: block;
+    padding: 12px 20px;
+  }
+
+  .gnb.active {
+    max-height: 1000px;
+  }
+
+  /* 메뉴 토글 열릴 때 햄버거 바 회전 애니메이션 */
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  section.kv {
+    padding: 100px 0;
+    height: 600px;
+  }
+  
 
   section.kv .kv_text h3 {
     font-size: 48px;
@@ -1265,9 +1340,6 @@ footer .footer-container .footer-legal a:hover {
 }
 @media (max-width: 768px) {
 
-  section.kv .w-1244 {
-    width: 89.84%;
-  }
 
   section.kv .kv_text h3 {
     font-size: 48px;
@@ -1304,10 +1376,15 @@ footer .footer-container .footer-legal a:hover {
   }
 }
 @media (max-width:440px) {
+
+    header {
+    padding: 0 0px;
+  }
+
   section.kv {
-    background: #0F1D45;
-    padding: 52px 0;
-    height: 543px;
+  background: #0F1D45;
+  padding: 109px 0;
+  height: 608px;
 }
 section.kv .kv_img .img {
   position: absolute;
@@ -1357,7 +1434,9 @@ section.kv .w-1244 {
 .section01 .title-img img {
   width: 100%;
   position: absolute;
-  transform: translate(-241px,339px);
+  transform: translate(-50%, -50%);
+  top: 84%;
+  left: 50%;
 }
 
 .section02 {
@@ -1400,18 +1479,19 @@ section.kv .w-1244 {
   margin: 40px 0;
 }
 .section03 .q1 .titlebox p{
-  font-size: 25px;
+  font-size: 23px;
 }
 .section03 .q1 .text-wrap h3 {
   font-size: 20px;
 }
 .section03 .q1 .text-wrap p {
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: -1px;
 }
 
 .section03 .q2 .titlebox {
   margin: 30px 0px;
+  padding: 20px 20px;
 }
 
 .section03 .q2 .titlebox p {
@@ -1432,7 +1512,7 @@ display: block;
 }
 
 .section03 .q3 .titlebox p {
-  font-size: 20px;
+  font-size: 18px;
 }
 .section03 .q3 .text-wrap p {
   font-size: 120px;
@@ -1440,7 +1520,7 @@ display: block;
   margin-bottom: 40px;
 }
 .section03 .q3 h3 {
-  font-size: 26px;
+  font-size: 22px;
 }
 .section03 .q3 .text-wrap .obj {
   width: 80%;
