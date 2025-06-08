@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import url('/assets/css/reset.css');
+@import url('/assets/css/common.css');
 
 header {
   position: fixed;
@@ -109,7 +111,6 @@ section.kv .kv_img .img {
 }
 
 section.kv .kv_img img {
-  width: 130%;
 }
 
 .section01 {
@@ -374,6 +375,7 @@ section.kv .kv_img img {
 
 .section03 .q2 p {
   line-height: 120%;
+  display: inline-block;
 }
 
 .section03 .q3 {
@@ -654,150 +656,41 @@ section.kv .kv_img img {
   width: 24px;
 }
 
-footer {
-  background-color: var(--blue-color);
-  color: #f8f9fa;
-  padding: 3rem 1rem;
-}
-
-footer .footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-}
-
-footer .footer-container .footer-brand {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-footer .footer-container .footer-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
+.footer {
+  background-color: #2c2c2c;
   color: white;
-  text-decoration: none;
+  padding: 40px 20px;
+  text-align: center;
 }
 
-footer .footer-container .footer-description {
-  color: var(--gray);
-  font-size: 0.9rem;
+.footer-logo {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-footer .footer-container .link-column h3 {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  position: relative;
-  padding-bottom: 0.5rem;
-}
-
-footer .footer-container .link-column h3::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 40px;
-  height: 2px;
-  background: var(--primary);
-}
-
-footer .footer-container .link-column ul {
+.footer-menu {
   list-style: none;
-}
-
-footer .footer-container .link-column li {
-  margin-bottom: 0.5rem;
-}
-
-footer .footer-container .link-column a {
-  color: var(--gray);
-  text-decoration: none;
-  transition: color 0.3s;
-  font-size: 0.9rem;
-}
-
-footer .footer-container .link-column a:hover {
-  color: var(--primary);
-}
-
-footer .footer-container .footer-social {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-footer .footer-container .social-icons {
-  display: flex;
-  gap: 1rem;
-}
-
-footer .footer-container .social-icons a {
-  color: var(--gray);
-  font-size: 1.2rem;
-  transition: color 0.3s;
-}
-
-footer .footer-container .social-icons a:hover {
-  color: var(--primary);
-}
-
-footer .footer-container .newsletter input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid var(--gray);
-  border-radius: 4px;
-  background: transparent;
-  color: white;
-  margin-bottom: 0.5rem;
-}
-
-footer .footer-container .newsletter button {
-  background: var(--primary);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: opacity 0.3s;
-}
-
-footer .footer-container .newsletter button:hover {
-  opacity: 0.9;
-}
-
-footer .footer-container .footer-bottom {
-  max-width: 1200px;
-  margin: 3rem auto 0;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0;
+  margin: 0 0 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  gap: 15px;
 }
 
-footer .footer-container .footer-bottom p {
-  color: var(--gray);
-  font-size: 0.8rem;
-}
-
-footer .footer-container .footer-legal {
-  display: flex;
-  gap: 1rem;
-}
-
-footer .footer-container .footer-legal a {
-  color: var(--gray);
+.footer-menu li a {
+  color: #ccc;
   text-decoration: none;
-  font-size: 0.8rem;
-  transition: color 0.3s;
+  font-size: 14px;
 }
 
-footer .footer-container .footer-legal a:hover {
-  color: var(--primary);
+.footer-menu li a:hover {
+  color: #fff;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: #aaa;
 }
 
 
@@ -1120,7 +1013,6 @@ footer .footer-container .footer-legal a:hover {
   }
 
   section.kv .kv_img img {
-    width: 498px;
   }
 
   .section01 {
@@ -1245,7 +1137,7 @@ footer .footer-container .footer-legal a:hover {
   }
 
   .section03 .q2 .titlebox p {
-    font-size: 30px;
+    font-size: 14px;
   }
 
   .section03 .q3 .titlebox p {
@@ -1377,6 +1269,8 @@ footer .footer-container .footer-legal a:hover {
 }
 @media (max-width:440px) {
 
+  
+
     header {
     padding: 0 0px;
   }
@@ -1384,7 +1278,7 @@ footer .footer-container .footer-legal a:hover {
   section.kv {
   background: #0F1D45;
   padding: 109px 0;
-  height: 608px;
+  height: 600px;
 }
 section.kv .kv_img .img {
   position: absolute;
@@ -1392,7 +1286,6 @@ section.kv .kv_img .img {
 }
 
 section.kv .kv_img img {
-  width: 443.15px;
 }
 
 section.kv .w-1244 {
@@ -1406,7 +1299,7 @@ section.kv .w-1244 {
   padding: 45px 0 ;
 }
 .section01 .title h2{
-  font-size: 30px ;
+  font-size: 25px ;
   margin-bottom: 50px;
 }
 .section01 .text_wrap .text_box {
@@ -1444,6 +1337,8 @@ section.kv .w-1244 {
   text-align: center;
 }
 
+
+
 .section02 .w-1244 {
   flex-direction: column;
 }
@@ -1472,35 +1367,38 @@ section.kv .w-1244 {
   padding: 65px 0;
 }
 
+.section03 h2 {
+  font-size: 40px;
+}
+
 
 .section03 .q1 .titlebox {
-  padding: 20px 50px;
+  padding: 15px 30px;
   border-radius: 100px;
   margin: 40px 0;
 }
 .section03 .q1 .titlebox p{
-  font-size: 23px;
+  font-size: 14px;
 }
 .section03 .q1 .text-wrap h3 {
   font-size: 20px;
 }
 .section03 .q1 .text-wrap p {
   font-size: 14px;
-  letter-spacing: -1px;
 }
 
 .section03 .q2 .titlebox {
-  margin: 30px 0px;
-  padding: 20px 20px;
+  display: block;
+  padding: 15px 30px;
 }
 
 .section03 .q2 .titlebox p {
-  font-size: 25px;
+  font-size: 14px;
+  
 }
 
 .section03 .q2 p {
   font-size: 16px;
-  width: 332px;
   margin: 0 auto;
 }
 .section03 .q2 span {
@@ -1511,16 +1409,24 @@ display: block;
   padding: 45px 0;
 }
 
+.section03 h3 {
+  font-size: 20px;
+}
+
+.section03 .titlebox {
+  padding : 10px 30px;
+}
+
 .section03 .q3 .titlebox p {
-  font-size: 18px;
+  font-size: 14px;
 }
 .section03 .q3 .text-wrap p {
-  font-size: 120px;
+  font-size: 95px;
   line-height: 180px;
   margin-bottom: 40px;
 }
 .section03 .q3 h3 {
-  font-size: 22px;
+  font-size: 19px;
 }
 .section03 .q3 .text-wrap .obj {
   width: 80%;
@@ -1534,7 +1440,7 @@ display: block;
 }
 
 .section03 .q4 .titlebox p {
-  font-size: 25px;
+  font-size: 14px;
 }
 .section03 .q4 h3 {
 font-size: 20px;
@@ -1543,9 +1449,15 @@ font-size: 20px;
   grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
 }
 .section03 .q4 .content-box .box:nth-child(3) {
-  margin-bottom: 70px;
+  margin-bottom: 0px;
 
 }
+
+.section03 .q4 .mb-70 {
+  margin-bottom: 0;
+}
+
+
 
 .section04 .title {
   text-align: center;
@@ -1565,6 +1477,8 @@ margin-bottom: 25px;
   width: 332px !important;
 }
 
+
+
 .section05 .title h2 {
   font-size: 30px
 }
@@ -1573,11 +1487,14 @@ margin-bottom: 25px;
   color: var(--grey-first);
 }
 
+  .footer-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
 
+}
 
-
-
-
+@media (max-width :375px) {
 
 }
 

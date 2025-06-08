@@ -137,5 +137,8 @@ img {
     .none {
         display: none !important;
     }
-}
 
+    .mb-70 {
+        margin-bottom: 0px;
+    }
+}
