@@ -1,5 +1,7 @@
 
 
+
+
   const gnb = document.querySelector('ul.gnb');
 
   function checkWidth() {
@@ -20,6 +22,40 @@ $(gnbToggle).ready(function() {
     $(this).toggleClass('active');
   });
 });
+
+const sections = document.querySelectorAll('section');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    } else {
+      entry.target.classList.remove('visible');
+    }
+  });
+}, {threshold: 0.1});
+
+sections.forEach(section => observer.observe(section));
+
+const q1 = document.querySelector('.q1');
+const q2 = document.querySelector('.q2');
+const q3 = document.querySelector('.q3');
+const q4 = document.querySelector('.q4');
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    } else {
+      entry.target.classList.remove('visible');
+    }
+  });
+});
+io.observe(q1);
+io.observe(q2);
+io.observe(q3);
+io.observe(q4);
+
 
 
 
