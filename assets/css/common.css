@@ -6,6 +6,8 @@
     font-style: normal;
 }
 
+
+
 :root {
     --blue-color: #0F1D45;
     --grey-first: #2F2F2F;
@@ -124,7 +126,7 @@ img {
       }
 }
 
-@media (max-width:440px) {
+@media (max-width:480px) {
     .w-1244 {
         padding: 0 16px;
 

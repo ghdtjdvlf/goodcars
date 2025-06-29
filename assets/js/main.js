@@ -1,11 +1,4 @@
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-    const smoother = ScrollSmoother.create({
-        wrapper: "#smooth-wrapper",
-        content: "#smooth-content",
-        smooth: 2.5,
-
-    });
 
   const gnb = document.querySelector('ul.gnb');
 
@@ -27,6 +20,7 @@ $(gnbToggle).ready(function() {
     $(this).toggleClass('active');
   });
 });
+
 
 
 
