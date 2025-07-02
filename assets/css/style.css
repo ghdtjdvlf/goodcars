@@ -81,6 +81,59 @@ header ul li a:hover {
   font-size: 18px;
 }
 
+header .mobile-menu {
+  position: fixed;
+  z-index: 1001;
+  top: 70px;
+  right: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: -2px 0 20px rgba(0, 0, 0, 0.1);
+  transition: right 0.4s cubic-bezier(0.17, 0.67, 0.21, 0.99);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header .mobile-menu.active {
+  right: 0;
+}
+
+header .mobile-menu .logo {
+  margin-bottom: 2rem;
+  text-align: right;
+}
+
+header .mobile-gnb {
+  list-style: none;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+
+header .mobile-gnb li {
+  margin-bottom: 1.8rem;
+}
+
+header .mobile-gnb a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: inline-block;
+  transition: transform 0.3s;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header .mobile-gnb a:hover {
+  transform: translateX(-10px);
+}
+
 
 
 
