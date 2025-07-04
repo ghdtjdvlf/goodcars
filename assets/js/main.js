@@ -2,7 +2,7 @@
 
 
 
-  const gnb = document.querySelector('ul.gnb');
+const gnb = document.querySelector('ul.gnb');
 
   function checkWidth() {
     if(window.innerWidth <= 1024) {
@@ -15,11 +15,10 @@
    window.addEventListener('resize', checkWidth);
   checkWidth();
 
-  const gnbToggle = document.querySelector('.menu-toggle')
-
-$(gnbToggle).ready(function() {
+$(document).ready(function() {
   $('.menu-toggle').on('click', function() {
     $(this).toggleClass('active');
+    $('.mobile-menu').toggleClass('active');
   });
 });
 
