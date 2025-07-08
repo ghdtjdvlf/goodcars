@@ -152,7 +152,7 @@ section.kv {
   width: 100%;
   background-image: linear-gradient(to right, #0F1D45 50%, #ECF0F5 50%);
   padding: 137px 0;
-  height: 937px;
+  height: 757px;
 }
 
 section.kv .w-1244 {
@@ -210,7 +210,7 @@ section.kv .kv_img img {}
 
 .section01 .title h2 span {
   display: block;
-  color: var(--blue-color);
+  color: #1f3b88;
 }
 
 .section01 .text_wrap .text_box:last-child {
@@ -224,7 +224,7 @@ section.kv .kv_img img {}
 .section01 .text_wrap .text_box h3 {
   font-size: 32px;
   font-weight: 700;
-  color: var(--grey-first);
+  color: var(--blue-color);
   margin-bottom: 7px;
 }
 
@@ -1382,7 +1382,7 @@ section.kv .kv_img img {}
   }
 }
 
-@media (max-width:480px) {
+@media (max-width:500px) {
 
 
 

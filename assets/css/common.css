@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
 @font-face {
     font-family: 'RixYeoljeongdo_Regular';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/RixYeoljeongdo_Regular.woff') format('woff');
@@ -13,9 +14,9 @@
     --grey-first: #2F2F2F;
     --grey-second: #595959;
     --white-first: #ECF0F5;
-    --fw-light:300;
-    --fw-medium:500;
-    --fw-bold:700;
+    --fw-light: 300;
+    --fw-medium: 500;
+    --fw-bold: 700;
 }
 
 * {
@@ -30,16 +31,18 @@
 
 body {
     font-family: "Pretendard", sans-serif;
-    font-size: 16px;  
+    font-size: 16px;
 }
 
 
 .white {
     color: var(--white-first);
 }
+
 .blue {
     color: var(--blue-color);
 }
+
 .black {
     #000
 }
@@ -71,27 +74,35 @@ img {
 .w-50 {
     width: 50%;
 }
+
 .w-55 {
     width: 55%;
 }
+
 .w-60 {
     width: 60%;
 }
+
 .mt-20 {
     margin-top: 20px;
 }
+
 .mb-70 {
     margin-bottom: 70px;
 }
+
 .mb-15 {
     margin-bottom: 15px;
 }
+
 .mb-20 {
     margin-bottom: 20px;
 }
+
 .mb-26 {
     margin-bottom: 26px;
 }
+
 .mb-30 {
     margin-bottom: 30px;
 }
@@ -109,24 +120,26 @@ img {
 }
 
 @media (max-width: 1280px) {
-  .w-1244 {
-    width: 100%;
-    padding: 0 120px;
-
-  }
-}
-@media (max-width: 1024px) {
     .w-1244 {
-    padding: 0 100px;
+        width: 100%;
+        padding: 0 120px;
+
     }
 }
-@media (max-width: 768px) {
+
+@media (max-width: 1024px) {
     .w-1244 {
-    padding: 0 50px;
-      }
+        padding: 0 100px;
+    }
 }
 
-@media (max-width:480px) {
+@media (max-width: 768px) {
+    .w-1244 {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width:500px) {
     .w-1244 {
         padding: 0 16px;
 
@@ -135,7 +148,7 @@ img {
     section.kv .w-50 {
         width: 100%;
     }
-    
+
     .none {
         display: none !important;
     }
