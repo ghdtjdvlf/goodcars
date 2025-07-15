@@ -1,7 +1,4 @@
 
-
-
-
 const gnb = document.querySelector('ul.gnb');
 
   function checkWidth() {
@@ -15,12 +12,25 @@ const gnb = document.querySelector('ul.gnb');
    window.addEventListener('resize', checkWidth);
   checkWidth();
 
-$(document).ready(function() {
-  $('.menu-toggle').on('click', function() {
-    $(this).toggleClass('active');
-    $('.mobile-menu').toggleClass('active');
+  $(document).ready(function () {
+    $('.menu-toggle').on('click', function (e) {
+      e.stopPropagation();
+      $(this).toggleClass('active');
+      $('.mobile-menu').toggleClass('active');
+    });
+
+    $('.mobile-gnb a').on('click', function () {
+      $('.mobile-menu').removeClass('active');
+      $('.menu-toggle').removeClass('active');
+    });
+
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('.mobile-menu, .menu-toggle').length) {
+        $('.mobile-menu').removeClass('active');
+        $('.menu-toggle').removeClass('active');
+      }
+    });
   });
-});
 
 const sections = document.querySelectorAll('section');
 
@@ -136,12 +146,13 @@ breakpoints: {
   }
 }
 });
+reviewSwiper / reviewSwiper
 
 // sec05 swiper 
 var reviewSwiper = new Swiper(".reviewSwiper", {
 autoplay: {
   delay: 0,
-  disableOnInteraction: false,
+  disableOnInteraction: false, // 반대 방향으로 슬라이드
 },
 spaceBetween: 20,
 loop: true,
@@ -154,13 +165,12 @@ simulateTouch: false,
 pauseOnMouseEnter: false,
 allowTouchMove: false,
 grabCursor: false,
-
 breakpoints: {
   1280: {
     slidesPerView: 3.5,
     spaceBetween: 20
   },
-  1024: {
+  1080: {
     slidesPerView: 2.5,
     spaceBetween: 20
   },
@@ -170,7 +180,7 @@ breakpoints: {
   },
   0: {
     slidesPerView: 1,
-    spaceBetween: 30
+    spaceBetween: 10
   }
 }
 });
