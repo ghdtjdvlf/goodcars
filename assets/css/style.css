@@ -155,6 +155,16 @@ section.kv {
   height: 757px;
 }
 
+section.kv h1 {
+  width: 1244px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 30px;
+  color: #ECF0F5;
+  text-align: center;
+  text-indent: -9999px;
+}
+
 section.kv .w-1244 {
   display: flex;
   position: relative;
