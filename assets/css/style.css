@@ -819,6 +819,10 @@ section.kv .kv_img img {}
 
 @media (max-width: 1280px) {
 
+  section.kv h1 {
+    width: 100%;
+  }
+
   header {
     padding: 0 80px;
   }
